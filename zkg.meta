@@ -1,10 +1,9 @@
 [package]
 script_dir = scripts
 build_command = ./configure && cmake --build build
-test_command = cd testing && btest -c btest.cfg
-summary = TODO: A summary of PcapFIDSource in one line
-description = TODO: A more detailed description of PcapFIDSource.
-	It can span multiple lines, with this indentation.
+summary = Dummy implementation of a Packet-deriving packet source.
+description = Provides a packet source that derives a custom Packet
+	class and uses it in returned packets.
 
 [template]
 source = https://github.com/zeek/package-template
@@ -15,4 +14,3 @@ features = plugin
 [template_vars]
 name = PcapFIDSource
 namespace = Corelight
-
