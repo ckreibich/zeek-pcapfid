@@ -5,14 +5,13 @@
 namespace zeek::plugin {
 namespace Corelight_PcapFIDSource {
 
-class Plugin : public zeek::plugin::Plugin
-{
+class Plugin : public zeek::plugin::Plugin {
 protected:
-	// Overridden from zeek::plugin::Plugin.
-	zeek::plugin::Configuration Configure() override;
+    // Overridden from zeek::plugin::Plugin.
+    zeek::plugin::Configuration Configure() override;
 };
 
 extern Plugin plugin;
 
-}
-}
+} // namespace Corelight_PcapFIDSource
+} // namespace zeek::plugin
