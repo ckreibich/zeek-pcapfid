@@ -10,6 +10,11 @@ namespace zeek::plugin::Corelight_PcapFIDSource {
 
 bool PcapFIDSource::ExtractNextPacket(Packet* pkt) {
     auto ret = PcapSource::ExtractNextPacket(pkt);
+    auto fpkt = static_cast<FIDPacket*>(pkt);
+
+    // In reality, this would need to somehow obtain the actual flow ID!
+    fpkt->flow_id = 42;
+
     return ret;
 }
 
