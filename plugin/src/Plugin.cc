@@ -1,8 +1,9 @@
-#include "Plugin.h"
-
 #include "zeek/iosource/Component.h"
+#include "zeek/conn_key/Component.h"
 
+#include "Plugin.h"
 #include "Source.h"
+#include "Factory.h"
 #include "config.h"
 
 namespace zeek::plugin::Corelight_PcapFIDSource {
@@ -15,6 +16,10 @@ zeek::plugin::Configuration Plugin::Configure() {
     AddComponent(new zeek::iosource::PktSrcComponent("PcapFIDReader", "pcapfid", iosource::PktSrcComponent::BOTH,
                                                      PcapFIDSource::Instantiate,
                                                      {0xA1B2C3D4, 0xD4C3B2A1, 0xA1B23C4D, 0x4D3CB2A1}));
+
+    AddComponent(new zeek::conn_key::Component("FLOW_ID_FIVETUPLE",
+                                               Factory::Instantiate));
+
     zeek::plugin::Configuration config;
     config.name = "Corelight::PcapFIDSource";
     config.description = "Dummy implementation of a Packet-deriving packet source";
