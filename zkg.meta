@@ -1,5 +1,5 @@
 [package]
-script_dir = scripts
+script_dir = package_scripts
 build_command = ./configure && cmake --build build
 summary = Dummy implementation of a Packet-deriving packet source.
 description = Provides a packet source that derives a custom Packet
